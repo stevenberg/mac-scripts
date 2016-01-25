@@ -2,6 +2,9 @@
 
 function indent
     while read line
+        if test "$line" = "Already up-to-date."
+            return
+        end
         set_color --bold green
         echo -n ' | '
         set_color normal
